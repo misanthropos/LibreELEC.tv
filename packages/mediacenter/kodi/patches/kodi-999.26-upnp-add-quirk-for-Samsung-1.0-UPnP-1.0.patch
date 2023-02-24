@@ -1,0 +1,26 @@
+From 7f5c291395d1245a2c10b776cc784083b21e11e4 Mon Sep 17 00:00:00 2001
+From: Miguel Borges de Freitas <92enen@gmail.com>
+Date: Wed, 22 Feb 2023 22:25:44 +0000
+Subject: [PATCH 2/2] [upnp] add quirk for Samsung/1.0 UPnP/1.0
+
+---
+ xbmc/network/upnp/UPnPInternal.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/xbmc/network/upnp/UPnPInternal.cpp b/xbmc/network/upnp/UPnPInternal.cpp
+index f4ba92ae05..06abb4c506 100644
+--- a/xbmc/network/upnp/UPnPInternal.cpp
++++ b/xbmc/network/upnp/UPnPInternal.cpp
+@@ -73,7 +73,8 @@ EClientQuirks GetClientQuirks(const PLT_HttpRequestContext* context)
+ 
+   if (user_agent) {
+       if (user_agent->Find("XBox", 0, true) >= 0 ||
+-          user_agent->Find("Xenon", 0, true) >= 0)
++          user_agent->Find("Xenon", 0, true) >= 0 ||
++          user_agent->Find("Samsung/1.0 UPnP/1.0", 0, true) >= 0)
+           quirks |= ECLIENTQUIRKS_ONLYSTORAGEFOLDER | ECLIENTQUIRKS_BASICVIDEOCLASS;
+ 
+       if (user_agent->Find("Windows-Media-Player", 0, true) >= 0)
+-- 
+2.39.2
+
