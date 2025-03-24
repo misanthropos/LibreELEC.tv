@@ -23,11 +23,11 @@ case "${LINUX}" in
     PKG_PATCH_DIRS="default rtlwifi/6.13 rtlwifi/6.14 rtlwifi/after-6.14"
     ;;
   raspberrypi)
-    PKG_VERSION="fc2c8c582d4228c3e76b6d3bf7823e8fafcd80d7" # 6.12.19
-    PKG_SHA256="1269f60a40b2e9c8dadec57bb4b35a9865364e9a8f543b10f7d2fd09bd3c15ab"
+    PKG_VERSION="627c48f0d51a48acb24442d6c63b5014e7ab8f95" # 6.14.x
+    PKG_SHA256="b27dec0474944fb7ca72a324bbc7a749bbc293dde4d53b3474309eee70d2bb3d"
     PKG_URL="https://github.com/raspberrypi/linux/archive/${PKG_VERSION}.tar.gz"
     PKG_SOURCE_NAME="linux-${LINUX}-${PKG_VERSION}.tar.gz"
-    PKG_PATCH_DIRS="raspberrypi rtlwifi/6.13 rtlwifi/6.14 rtlwifi/after-6.14"
+    PKG_PATCH_DIRS="raspberrypi rtlwifi/after-6.14"
     ;;
   *)
     PKG_VERSION="6.12.20"
@@ -227,7 +227,6 @@ make_target() {
           PERF_BUILD_ARGS="ARCH=${TARGET_ARCH}"
           ;;
       esac
-
       WERROR=0 \
       NO_LIBPERL=1 \
       NO_LIBPYTHON=1 \
@@ -240,7 +239,7 @@ make_target() {
       NO_SDT=1 \
       CROSS_COMPILE="${TARGET_PREFIX}" \
       JOBS="${CONCURRENCY_MAKE_LEVEL}" \
-        make ${PERF_BUILD_ARGS}
+      make "${PERF_BUILD_ARGS}"
       mkdir -p ${INSTALL}/usr/bin
         cp perf ${INSTALL}/usr/bin
     )

@@ -28,7 +28,8 @@ FLAGS_OPTIM_LTO_OFF="-fno-lto"
 # linker specific flags
 LDFLAGS_OPTIM_LINKER_COMPILER_DEFAULT=""
 LDFLAGS_OPTIM_LINKER_BFD="-fuse-ld=bfd"
-LDFLAGS_OPTIM_LINKER_GOLD="-fuse-ld=gold"
+LDFLAGS_OPTIM_LINKER_LLD="-fuse-ld=lld"
+LDFLAGS_OPTIM_LINKER_GOLD="-fuse-ld=lld"
 LDFLAGS_OPTIM_LINKER_MOLD="-fuse-ld=mold"
 
 # default compiler optimization
