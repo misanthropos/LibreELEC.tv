@@ -12,7 +12,7 @@ PKG_DEPENDS_HOST="nspr:host zlib:host"
 PKG_DEPENDS_TARGET="make:host gcc:host nss:host nspr zlib sqlite"
 PKG_LONGDESC="The Network Security Services (NSS) package is a set of libraries designed to support cross-platform development of security-enabled client and server applications"
 PKG_TOOLCHAIN="manual"
-PKG_BUILD_FLAGS="-parallel"
+PKG_BUILD_FLAGS="-parallel -gold"
 
 post_patch() {
   echo "DEFINES += -DNSS_FIPS_DISABLED" >> ${PKG_BUILD}/nss/coreconf/config.mk

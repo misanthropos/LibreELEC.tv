@@ -11,3 +11,4 @@ PKG_DEPENDS_HOST="7-zip:host autoconf:host autoconf-archive:host automake:host b
 PKG_DEPENDS_TARGET="toolchain:host gcc:host patchelf:host pax-utils:host"
 PKG_SECTION="virtual"
 PKG_LONGDESC="LibreELEC.tv' toolchain to compile all packages"
+PKG_BUILD_FLAGS="-gold"

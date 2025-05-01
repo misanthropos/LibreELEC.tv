@@ -12,6 +12,8 @@ PKG_LONGDESC="This package contains a precompiled kernel image and the modules."
 PKG_IS_KERNEL_PKG="yes"
 PKG_STAMP="${KERNEL_TARGET} ${KERNEL_MAKE_EXTRACMD}"
 
+PKG_BUILD_FLAGS="-gold"
+
 PKG_PATCH_DIRS="${LINUX}"
 
 case "${LINUX}" in

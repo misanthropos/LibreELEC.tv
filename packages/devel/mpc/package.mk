@@ -15,3 +15,4 @@ PKG_CONFIGURE_OPTS_HOST="--target=${TARGET_NAME} \
                          --enable-static --disable-shared \
                          --with-gmp=${TOOLCHAIN} \
                          --with-mpfr=${TOOLCHAIN}"
+PGK_BUILD_FLAGS="-gold"

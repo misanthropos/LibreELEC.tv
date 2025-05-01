@@ -11,7 +11,7 @@ PKG_URL="https://github.com/heimdal/heimdal/archive/${PKG_VERSION}.tar.gz"
 PKG_DEPENDS_HOST="autotools:host Python3:host ncurses:host asn1c:host flex:host"
 PKG_LONGDESC="Kerberos 5, PKIX, CMS, GSS-API, SPNEGO, NTLM, Digest-MD5 and, SASL implementation."
 PKG_TOOLCHAIN="autotools"
-PKG_BUILD_FLAGS="-parallel"
+PKG_BUILD_FLAGS="-parallel -gold"
 
 pre_configure_host() {
   # configure step misconfigures with gcc 14 unless this error is degraded to a warning
